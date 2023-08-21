@@ -12,16 +12,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'Product-list-two',
-    data() {
-    return {
-      
+    
+computed: {
+    ...mapGetters(['getProducts']),
+    products() {
+      return this.getProducts;
     }
   },
-  props: ['products']
-
 }
+
 </script>
 
 <style scoped>
